@@ -17,4 +17,8 @@ if (BUILD_TESTING)
     set_tests_properties(encode PROPERTIES
             PASS_REGULAR_EXPRESSION "pass"
             FAIL_REGULAR_EXPRESSION "failed")
+
+    add_test(write test/write_test)
+    set_tests_properties(encode PROPERTIES
+            PASS_REGULAR_EXPRESSION "pass")
 endif ()
