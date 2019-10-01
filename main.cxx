@@ -6,7 +6,7 @@ int
 main(int argc, char* argv[])
 {
   if (argc < 4) {
-    std::cerr << "Usage: bin2cxx binary_file output_file array_name\n";
+    std::cerr << "Usage: bin2cxx binary_file output_file identifier\n";
     return 1;
   }
 
