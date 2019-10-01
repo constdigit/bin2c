@@ -39,7 +39,7 @@ encode(std::vector<std::uint8_t> binary_file_data, std::string identifier)
                    "namespace "
                 << identifier
                 << " {\n"
-                   "constexpr std::uint8_t data[] = \n\t{ ";
+                   "constexpr std::uint8_t data[] = \n  { ";
 
   // Binary data writes as hexadecimal literals inside initializer list. To make
   // output more pretty, one-digit values are amended by insignificant zero.
@@ -49,8 +49,8 @@ encode(std::vector<std::uint8_t> binary_file_data, std::string identifier)
   for (size_t i = 1; i < binary_file_data.size(); i++) {
     output_stream << ", 0x" << std::setfill('0') << std::setw(2) << std::hex
                   << static_cast<std::uint32_t>(binary_file_data[i]);
-    if ((i % 11) == 10) { // new line after each
-      output_stream << "\n\t";
+    if ((i % 12) == 11) { // new line after each 11 values
+      output_stream << "\n  ";
     }
   }
   output_stream << " };\n\n"; // close initializer list
