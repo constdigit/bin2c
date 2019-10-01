@@ -1,3 +1,2 @@
-bin2c
-test/test_header.h
-test/test
+.idea/
+cmake-build-*/
